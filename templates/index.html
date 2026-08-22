@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Pokédex — Discover Pokémon</title>
+  <meta name="description" content="A polished interactive Pokédex powered by PokéAPI.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="bg-orb orb-one"></div><div class="bg-orb orb-two"></div>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand"><div class="pokeball"><span></span></div><div><strong>POKÉDEX</strong><small>Pokémon encyclopedia</small></div></div>
+      <div class="status"><i></i> LIVE DATA</div>
+    </header>
+
+    <section class="hero">
+      <div class="eyebrow">NATIONAL DATABASE</div>
+      <h1>Discover your<br><em>next Pokémon.</em></h1>
+      <p>Search by name or Pokédex number. Explore stats, abilities and evolution families.</p>
+      <form id="searchForm" class="search">
+        <span>⌕</span><input id="searchInput" autocomplete="off" placeholder="Search Pokémon, e.g. Pikachu or 25"><button>SEARCH</button>
+      </form>
+      <div id="suggestions" class="suggestions"></div>
+    </section>
+
+    <section id="content" class="content">
+      <div id="loader" class="loader hidden"><div class="spinner"></div><span>Fetching Pokémon data…</span></div>
+      <div id="error" class="error hidden"></div>
+      <div id="pokemonView" class="hidden">
+        <div class="detail-grid">
+          <article class="art-card">
+            <div class="card-top"><span id="number"></span><span id="gen"></span></div>
+            <div class="art-glow"></div>
+            <img id="art" alt="">
+            <div class="name-block"><div id="types"></div><h2 id="name"></h2><p id="species"></p></div>
+          </article>
+          <article class="info-card">
+            <div class="section-head"><div><span>ABOUT</span><h3>Pokémon profile</h3></div></div>
+            <p id="description" class="description"></p>
+            <div class="facts"><div><span>HEIGHT</span><b id="height"></b></div><div><span>WEIGHT</span><b id="weight"></b></div><div><span>ABILITIES</span><b id="abilities"></b></div></div>
+            <div class="section-head stats-head"><div><span>BASE STATS</span><h3>Battle profile</h3></div><b id="total"></b></div>
+            <div id="stats"></div>
+          </article>
+        </div>
+        <article class="evo-card">
+          <div class="section-head"><div><span>EVOLUTION FAMILY</span><h3>Growth path</h3></div></div>
+          <div id="evolution" class="evolution"></div>
+        </article>
+        <div class="nav-buttons"><button id="prev">← PREVIOUS</button><button id="next">NEXT →</button></div>
+      </div>
+    </section>
+    <footer>Data provided by PokéAPI · Built as an independent implementation</footer>
+  </main>
+<script src="/static/app.js"></script>
+</body>
+</html>
