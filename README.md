@@ -14,6 +14,6 @@ pip install -r requirements.txt
 python app.py
 ```
 
-Open http://127.0.0.1:5000
+Open https://pokedex-6r0t.onrender.com
 
 The frontend fetches live Pokémon data from PokéAPI. PokéAPI provides Pokémon resources and evolution-chain endpoints.
